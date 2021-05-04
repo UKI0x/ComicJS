@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<script>
+		document.write("<hr>『break』のサンプル<br>");
+		for (var i = 0; i < 10; i ++) {
+			if (i == 7) {
+				document.write(i + "finish!<br>");
+				break;	// 変数『i』が『7』ならループを抜ける
+			}
+			document.write(i + "<br>");
+		}
+
+
+		document.write("<hr>『continue』のサンプル<br>");
+		for (var i = 0; i < 10; i ++) {		// *1
+			if (i == 7) {
+				// 変数『i』が『7』なら、
+				// 『*2』以下を処理せず『*1』に戻る。
+				document.write("skip!<br>");
+				continue;
+			}
+			// *2
+			document.write(i + "<br>");
+		}
+
+
+		document.write("<hr>『for』文の入れ子のサンプル<br>");
+		for (var i = 0; i < 10; i ++) {	// *1
+			for (var j = 0; j < 10; j ++) {	// *2
+				if (j == 7) {
+					// 変数『j』が『7』なら
+					// 『*2』のループを抜ける
+					document.write(i + "-" + j + "finish!<br>");
+					break;
+				}
+				document.write(i + "-" + j + ", ");
+			}
+		}
+
+
+		document.write("<hr>『ラベル』のサンプル<br>");
+		outer:
+		for (var i = 0; i < 10; i ++) {	// *1
+			for (var j = 0; j < 10; j ++) {	// *2
+				if (j == 7) {
+					// 変数『j』が『7』なら
+					// 『outer』という『ラベル』が付いた
+					// 『*1』のループを抜ける
+					document.write(i + "-" + j + "finish!<br>");
+					break outer;
+				}
+				document.write(i + "-" + j + ", ");
+			}
+		}
+		</script>
+	</body>
+</html>
