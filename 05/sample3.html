@@ -4,7 +4,14 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
+		<div id="hoge">
+			hogeっていうidが指定されているよ！
+		</div>
 		<script>
+		
+		const element = document.getElementById('hoge');
+		console.log(element.innerText);
+		alert("改行付き文字列\n改行されました");
 		// <body>～</body>内で使う その場所に文字列を表示
 		document.write("文字列1");
 		document.write("文字列1");
@@ -12,7 +19,7 @@
 		</script>
 
 		<pre><script>
-		// writeの改行付き（<pre>～</pre>内で改行される）
+		//document.writeと同じ意味だが、改行される writeの改行付き（<pre>～</pre>内で改行される）
 		document.writeln("文字列2");
 		document.writeln("文字列2");
 		</script></pre>
